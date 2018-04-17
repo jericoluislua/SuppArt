@@ -1,3 +1,54 @@
-body {
-  padding-top: 50px;
+body{
+  font-weight: 300;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  width: 100%;
+  background-color: #91acd9;
+}
+header{
+  background-color: #313d54;
+  height: 90px;
+  vertical-align: middle;
+  padding: 14px 16px;
+
+}#logo{
+   margin-top: -10px;
+   font-family: 'Monoton',cursive;
+   font-size: 65px;
+   color: white;
+ }
+#mid{
+  height: 350px;
+//background: linear-gradient(to right, #5e76a4 , #718fc5);
+  font-family: 'Poppins', sans-serif;
+  font-size:30px;
+  background-image: url("/public/images/mid_background.png");
+  background-size: 100% 370px;
+}
+
+ul {
+  height: 50px;
+  font-family: 'Poppins', sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #495c7f;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }

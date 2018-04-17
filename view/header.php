@@ -8,6 +8,7 @@
     <title><?= $title ?> | Bbc MVC</title>
 
     <!-- Bootstrap core CSS -->
+      <link href="https://fonts.googleapis.com/css?family=Monoton|Poppins:100i,100i" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
@@ -32,11 +33,13 @@
           <a class="navbar-brand" href="/">Bbc MVC</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/user">Benutzer</a></li>
-            <li><a href="/user/create">Benutzer erstellen</a></li>
-          </ul>
+            <ul class="listload">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="drawings.html">Drawings</a></li>
+                <li><a href="photographs.html">Photographs</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="registration.html">Registration</a></li>
+            </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
