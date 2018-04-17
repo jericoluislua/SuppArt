@@ -35,10 +35,22 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="listload">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="drawings.html">Drawings</a></li>
-                <li><a href="photographs.html">Photographs</a></li>
+                <li>
+                    <a>Drawings</a>
+                    <ul>
+                        <a href="digital.html">Digital</a>
+                        <a href="hand.html">Handmade</a>
+                    </ul>
+                </li>
+                <li>
+                    <a>Photographs</a>
+                    <ul>
+                        <a href="scenery.html">Scenery</a>
+                        <a href="portrait.html">Portrait</a>
+                    </ul>
+                </li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="registration.html">Registration</a></li>
+                <li><a href="/registration">Registration</a></li>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
