@@ -8,5 +8,11 @@
  */
 class LoginController
 {
-
+    public function index()
+    {
+        $view = new View('user_index');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->display();
+    }
 }
