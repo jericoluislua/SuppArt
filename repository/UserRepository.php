@@ -37,16 +37,16 @@ class UserRepository extends Repository
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         if($admin === "flourish"){
-            $isAdmin = true;
+            $isAdmin = 1;
 
         }
         else if($admin === ""){
-            $isAdmin = false;
+            $isAdmin = 0;
 
         }
 
 
-        $statement->bind_param('ssssb', $firstName, $lastName, $email, $password, $isAdmin);
+        $statement->bind_param('ssssi', $firstName, $lastName, $email, $password, $isAdmin);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

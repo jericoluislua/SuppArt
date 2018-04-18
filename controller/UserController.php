@@ -12,17 +12,9 @@ class UserController
         $userRepository = new UserRepository();
 
         $view = new View('user_index');
-        $view->title = 'User';
-        $view->heading = 'user';
-        $view->users = $userRepository->readAll();
-        $view->display();
-    }
-
-    public function create()
-    {
-        $view = new View('user_create');
-        $view->title = 'create user';
-        $view->heading = 'create user';
+        $view->title = 'Login';
+        $view->heading = '';
+        $view->users = $userRepository->readById();
         $view->display();
     }
 

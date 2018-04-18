@@ -138,4 +138,11 @@ background-size: cover;
 
 #login{
   float: right;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+#login_submit{
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
