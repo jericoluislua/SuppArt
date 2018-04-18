@@ -8,7 +8,7 @@
     <title><?= $title ?> | Bbc MVC</title>
 
     <!-- Bootstrap core CSS -->
-      <link href="https://fonts.googleapis.com/css?family=Monoton|Poppins:100i,100i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Monoton|Poppins:100i,100" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
@@ -54,7 +54,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <h1 id="subtitles"><?= $subtitle?></h1>
 
-    <div class="container">
 
-    <h1><?= $heading ?></h1>
+

@@ -37,8 +37,9 @@ class DefaultController
         //   "default_index" rendern. Wie das genau funktioniert, ist in der
         //   View Klasse beschrieben.
         $view = new View('default_index');
-        $view->title = 'Startseite';
-        $view->heading = 'Startseite';
+        $view->title = 'SuppArt';
+        $view->heading = 'Thats a cool site!';
+        $view->subtitle = '';
         $view->display();
     }
 }
