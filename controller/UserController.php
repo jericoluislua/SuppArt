@@ -32,11 +32,12 @@ class UserController
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $email = $_POST['email'];
-            // $password  = $_POST['password'];
+            $password  = $_POST['password'];
+            $admin = $_POST['admin'];
             $password = 'no_password';
 
             $userRepository = new UserRepository();
-            $userRepository->create($firstName, $lastName, $email, $password);
+            $userRepository->create($firstName, $lastName, $email, $password, $admin);
         }
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
