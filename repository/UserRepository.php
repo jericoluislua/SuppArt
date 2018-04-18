@@ -25,6 +25,7 @@ class UserRepository extends Repository
      * @param $lastName Wert für die Spalte lastName
      * @param $email Wert für die Spalte email
      * @param $password Wert für die Spalte password
+     * @param $admin Wert für die Spalte admin
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
@@ -46,8 +47,6 @@ class UserRepository extends Repository
 
 
         $statement->bind_param('ssssb', $firstName, $lastName, $email, $password, $isAdmin);
-
-
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

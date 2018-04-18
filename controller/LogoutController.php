@@ -12,5 +12,10 @@ class LogoutController
     public function index()
     {
 
+        $view = new View('user_index');
+        $view->title = 'Login';
+        $view->heading = '';
+        $view->subtitle = 'Login';
+        $view->display();
     }
 }
