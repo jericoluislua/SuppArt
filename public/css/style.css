@@ -7,17 +7,23 @@ body{
   background-color: #91acd9;
 }
 .container{
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  padding:0;
 }
-header{
+.navbar-header{
   background-color: #313d54;
-  height: 90px;
+  height: 80px;
+  width: 100%;
+  padding: 15px;
   vertical-align: middle;
-  padding:10px;
-
-}#logo{
-   margin-top: -10px;
+  margin: 0 auto;
+}
+.container>.navbar-header {
+  width:100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+.navbar-brand{
    font-family: 'Monoton',cursive;
    font-size: 65px;
    color: white;

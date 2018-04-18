@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Bbc MVC</a>
+          <a class="navbar-brand" href="/">SuppArt</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="listload">
