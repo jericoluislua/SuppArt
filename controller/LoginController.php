@@ -12,7 +12,8 @@ class LoginController
     {
         $view = new View('user_index');
         $view->title = 'Login';
-        $view->heading = 'Login';
+        $view->heading = '';
+        $view->subtitle = 'Login';
         $view->display();
     }
 }
