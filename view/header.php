@@ -34,7 +34,6 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="listload">
-                <li><a href="index.html">Home</a></li>
                 <li>
                     <a>Drawings</a>
                     <ul>

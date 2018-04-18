@@ -28,6 +28,17 @@ body{
    font-size: 65px;
    color: white;
  }
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+.navbar-fixed-bottom, .navbar-fixed-top {
+   right: 0;
+   left: 0;
+   z-index: 1030;
+ }
  .listload{
    width: 100%;
  }
@@ -42,14 +53,22 @@ body{
 
 ul {
   height: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', cursive;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #495c7f;
 }
-
+ul li ul:hover{
+  height: 50px;
+  font-family: 'Poppins', cursive;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #495c7f;
+}
 li {
   float: left;
 }
@@ -63,5 +82,5 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #495c7f;
 }
