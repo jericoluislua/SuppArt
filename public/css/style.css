@@ -31,6 +31,7 @@ a:hover{
    font-family: 'Monoton',cursive;
    font-size: 65px;
    color: white;
+  position: absolute;
  }
 .navbar {
   position: relative;
@@ -48,7 +49,7 @@ a:hover{
    margin: 0 auto;
  }
 .mid-section{
-  height: 300px;
+  height: 400px;
   background-image: url("/images/mid_background.png");
   background-size: cover;
 
@@ -61,6 +62,7 @@ a:hover{
   padding-top: 15px;
   margin-top: 0;
   margin-bottom: 0;
+  position: absolute;
 }
 #subtitles{
   color: white;
@@ -107,4 +109,20 @@ li a:hover {
 #regform{
   margin-top: 50px;
   width: 700px;
+}
+.content{
+  width: 99%;
+  background-color: #b0c9f8;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  height: 1000px;
+background-size: cover;
+}
+
+.content-title{
+  width: 500px;
+  height: 70px;
+  background: linear-gradient(to right, #6f89a4 , #91acd9);
+  color:white;
+
 }
