@@ -29,9 +29,9 @@ a:hover{
   margin-left: 0;
 }
 .navbar-brand{
-   font-family: 'Monoton',cursive;
-   font-size: 65px;
-   color: white;
+  font-family: 'Monoton',cursive;
+  font-size: 65px;
+  color: white;
   position: absolute;
  }
 .navbar {

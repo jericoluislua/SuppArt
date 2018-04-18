@@ -37,11 +37,11 @@
                 <form id="login" method="post" action="/user">
                     <p class="login_email">
                         E-Mail
-                        <input type="email" name="email" value="" id="login_emailinput" placeholder="E-Mail">
+                        <input type="email" name="email" value="" id="login_emailinput" placeholder="E-Mail" required>
                     </p>
                     <p class="login_password">
                         Password
-                        <input type="password" name="password" value="" id="login_passinput" placeholder="Password">
+                        <input type="password" name="password" value="" id="login_passinput" placeholder="Password" required>
                         <input type="submit" name="send" value="Login" id="login_submit">
                     </p>
                 </form>

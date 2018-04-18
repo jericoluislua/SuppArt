@@ -13,11 +13,21 @@ class UserController
 
         $view = new View('user_index');
         $view->title = 'Login';
+        $view->subtitle = 'Login';
         $view->heading = '';
-        $view->users = $userRepository->readById();
+        $view->users = $userRepository->readAll();
         $view->display();
     }
-
+    public function doLogin()
+    {
+        if($_POST['loginsend']) {
+            $loginemail = $_POST['loginemail'];
+            $loginpassword  = $_POST['loginpassword'];
+            $userRepository = new UserRepository();
+            $userRepository->login($loginemail, $loginpassword);
+        }
+        header('Location: /user');
+    }
     public function doCreate()
     {
         if ($_POST['send']) {
