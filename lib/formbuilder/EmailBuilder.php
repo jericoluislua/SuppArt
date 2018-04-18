@@ -1,6 +1,12 @@
 <?php
 
-class TextBuilder extends Builder
+/**
+ * Created by PhpStorm.
+ * User: bluaje
+ * Date: 18.04.2018
+ * Time: 13:33
+ */
+class EmailBuilder extends Builder
 {
     public function __construct()
     {
@@ -14,7 +20,7 @@ class TextBuilder extends Builder
         $result = '<div class="form-group">';
         $result .= "    <label class=\"col-md-2 control-label\" for=\"textinput\">{$this->label}</label>";
         $result .= '    <div class="col-md-4">';
-        $result .= "        <input name=\"{$this->name}\" type=\"text\" value=\"{$this->value}\" class=\"form-control input-md\" required>";
+        $result .= "        <input name=\"{$this->name}\" type=\"email\" value=\"{$this->value}\" class=\"form-control input-md\">";
         $result .= '    </div>';
         $result .= '</div>';
 
