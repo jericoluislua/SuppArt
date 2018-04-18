@@ -38,7 +38,7 @@ class DefaultController
         //   View Klasse beschrieben.
         $view = new View('default_index');
         $view->title = 'SuppArt';
-        $view->heading = 'Thats a cool site!';
+        $view->heading = 'Thats a cool site! This is some random ass text just to keep this middle part a bit interessting with some information which would be terminated from your brain while you read';
         $view->subtitle = '';
         $view->display();
     }

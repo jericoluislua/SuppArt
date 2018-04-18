@@ -50,6 +50,8 @@
                 </li>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/registration">Registration</a></li>
+                <li><a href="/logout">Logout</a></li>
+
             </ul>
         </div><!--/.nav-collapse -->
       </div>
