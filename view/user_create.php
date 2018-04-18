@@ -1,3 +1,5 @@
+<div id="regform">
+
 <?php
 
 $form = new Form('/user/doCreate');
@@ -10,3 +12,6 @@ echo $form->password()->label('Admin')->name('admin');
 echo $form->submit()->label('Register')->name('send');
 
 $form->end();
+
+?>
+</div>

@@ -103,3 +103,8 @@ li a {
 li a:hover {
   background-color: #495c7f;
 }
+
+#regform{
+  margin-top: 50px;
+  width: 700px;
+}
