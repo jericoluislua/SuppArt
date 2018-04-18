@@ -31,6 +31,18 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">SuppArt</a>
+            <?php
+
+            echo '
+            <form id="login" method="post" action="/Login">
+            <p class="login_title">Username
+            <input type="email" name="E-Mail" value="" class="login_area" placeholder="Username or Email"></p>
+            <p class="login_title">Password
+            <input type="password" name="Password" class="login_area" value="" placeholder="Password">
+            <input type="submit" name="login"/></p>
+            </form>
+            ';
+            ?>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="listload">
@@ -56,7 +68,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <h1 id="subtitles"><?= $subtitle?></h1>
+    <h1 class="subtitles"><?= $subtitle?></h1>
 
 
 

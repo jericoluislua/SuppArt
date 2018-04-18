@@ -2,7 +2,7 @@
     <h1 id="headings"><?= $heading ?></h1>
 </div>
 <div class="content-title">
-    <h2 id="subtitles"></h2>
+    <h4 class="subtitles2">Check out recent posts</h4>
 </div>
 <div class="content">
 

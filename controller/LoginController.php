@@ -16,4 +16,7 @@ class LoginController
         $view->subtitle = 'Login';
         $view->display();
     }
+    public function login(){
+
+    }
 }

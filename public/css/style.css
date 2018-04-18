@@ -13,14 +13,15 @@ a:hover{
   width: 100%;
   padding:0;
 }
+
+
 .navbar-header{
   background-color: #313d54;
-  height: 80px;
+  height: 100px;
   width: 100%;
   padding: 15px;
   vertical-align: middle;
   margin: 0;
-  color:white;
 }
 .container>.navbar-header {
   width:100%;
@@ -64,10 +65,18 @@ a:hover{
   margin-bottom: 0;
   position: absolute;
 }
-#subtitles{
+.subtitles{
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size:50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+.subtitles2{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size:30px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 15px;
@@ -120,9 +129,13 @@ background-size: cover;
 }
 
 .content-title{
-  width: 500px;
+  width: 600px;
   height: 70px;
   background: linear-gradient(to right, #6f89a4 , #91acd9);
-  color:white;
+  padding-top: 10px;
 
+}
+
+#login{
+  float: right;
 }
