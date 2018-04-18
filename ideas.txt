@@ -1,0 +1,45 @@
+drawing/photography public criticism
+goals:
+	registrate,login,logout
+	comment a post
+	rate a post
+	post a pic
+	TO MAKE ARTISTS HELP EACH OTHER
+	
+
+categories:
+	drawing
+	sub:
+		digital
+		hand
+	photography
+	sub:
+		scenery
+		portraits
+
+title: SuppArt
+title font: Monoton
+normal font: poppins
+category font: poppins
+
+
+
+we can: design, basic html, menu(categories), "login, logout, registration"
+schwierigkeiten: rating system, bilder hochladen programmieren, schlechte Kommentare melden
+
+adminpw: flourish
+
+database: ArtDB
+	table: 
+	USER = id INT PK NOT NULL AI, firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50)NOT NULL, email VARCHAR(50)NOT NULL, password INT(80)NOT NULL, admin BOOLEAN
+	POSTS = postid, userid, bildid
+	IMAGE = id INT PK NOT NULL AI, imgname VARCHAR(50) NOT NULL
+	BILD_KOMMENTAR = bkid, bildid, 
+	KOMMENTAR = kommid, kommentar, gemeldet, entfernt
+	BEWERTUNG = bewid, bewertung, durchschnitt
+
+table export
+	Exportiereren
+	scroll
+	Objekterstellungsoptionen
+	CREATE TABLE-Befehl hinzufügen
