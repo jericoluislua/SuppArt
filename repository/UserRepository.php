@@ -61,7 +61,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
 
-        $query = "SELECT * FROM $this->tableName WHERE email = ?";
+        $query = "SELECT * FROM $this->tableName WHERE email = ? AND password = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
 
         $statement->bind_param('ss', $email, $password);
@@ -69,9 +69,25 @@ class UserRepository extends Repository
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
+        $row = mysqli_num_rows($statement);
 
+        if($row == 1){
+            echo "logged in";
+            session_start();
+        }
+        else{
+            echo "Wrong email or password";
+        }
 
+        if($row == 1){
+            echo 'found';
+        } else {
+            echo 'not found';
+        }
 
-        return $statement->select_id;
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+        return $statement->get_result();
     }
 }

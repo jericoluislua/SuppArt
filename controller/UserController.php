@@ -26,6 +26,7 @@ class UserController
         $view->heading = '';
         $view->display();
     }
+
     public function doLogin()
     {
         if($_POST['loginsend']) {
