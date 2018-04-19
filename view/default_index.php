@@ -6,5 +6,9 @@
 </div>
 <div class="content">
 
-    <img src="images/post1.jpg" width="280" height="280" title="post1" alt="post1 />
+    <img src="images/post1.jpg" width="280" height="280" title="post1" alt="post1" />
+    <img src="images/post2.jpg" width="280" height="280" title="post2" alt="post2" />
+    <img src="images/post3.jpg" width="280" height="280" title="post3" alt="post3" />
+    <img src="images/post4.jpg" width="280" height="280" title="post4" alt="post4" />
+
 </div>
