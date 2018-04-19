@@ -30,11 +30,18 @@ class LoginController
             if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail'])){
                 $userRepository = new UserRepository();
                 $isLoggedIn = $userRepository->login($loginemail, $loginpassword);
-                if($isLoggedIn){
-                    $_SESSION['loggedIn'] = $loginemail;
+                if(isset($isLoggedIn)){
+                    $_SESSION['LoggedIn'] = $loginemail;
                     echo "Session created.";
+                    session_start();
+                    if (isset($_SESSION['LoggedIn'])){
+                        die('here');
+
+                        echo "Session has started.";
+                        echo $_SESSION['LoggedIn'];
+                    }
                 }else{
-                    echo "Invalid Username or Password.";
+                    //echo "Invalid Username or Password.";
                 }
             }
 

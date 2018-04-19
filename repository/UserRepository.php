@@ -77,12 +77,8 @@ class UserRepository extends Repository
         }
 
         $user = $result->fetch_object();
-
-
         if(password_verify($password,$user->password)){
-            if (session_start()){
-                echo "Session has started.";
-            }
+
             return true;
         }
 

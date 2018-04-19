@@ -1,7 +1,6 @@
 <div id="regform">
 
 <?php
-
 $form = new Form('/login/doLogin');
 
 

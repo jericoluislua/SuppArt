@@ -8,17 +8,27 @@
  */
 class LogoutController
 {
+
     public function index(){
         $view = new View('user_index');
         $view->title = 'Logged out';
         $view->heading = '';
-        $view->subtitle = 'logged out';
+        $view->subtitle = 'Logged out';
         $view->display();
     }
 
     public function doLogout(){
-        session_destroy();
-        session_unset();
-        die("Logout succesfully.");
+        session_start();
+        if(isset($_SESSION['LoggedIn'])){
+            session_destroy();
+            session_unset($_SESSION['LoggedIn']);
+            unset($_SESSION['LoggedIn']);
+            echo "Logout succesfully.";
+
+        }
+        elseif (!isset($_SESSION['loggedIn'])){
+            echo "Have not logged in";
+        }
+
     }
 }
