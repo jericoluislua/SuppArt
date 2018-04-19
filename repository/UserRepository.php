@@ -71,9 +71,6 @@ class UserRepository extends Repository
         }
 
 
-
-
-
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
