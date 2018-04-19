@@ -1,4 +1,4 @@
-<?php session_start()?>
+
 
 <div class="mid-section">
     <h1 id="headings"><?= $heading ?></h1>
