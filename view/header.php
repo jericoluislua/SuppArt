@@ -42,7 +42,7 @@
                     <p class="login_title" >
                         Password
                         <input type="password" name="loginpassword" value="" id="login_passinput" required>
-                        <input type="submit" name="send" value="Login" id="login_submit">
+                        <input type="submit" name="loginsend" value="Login" id="login_submit">
                         <a href="/upload/index">Post a Picture</a>
                     </p>
                     

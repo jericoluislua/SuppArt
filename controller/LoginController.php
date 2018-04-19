@@ -32,7 +32,8 @@ class LoginController
                 $isLoggedIn = $userRepository->login($loginemail, $loginpassword);
                 if(isset($isLoggedIn)){
                     $_SESSION['LoggedIn'] = $loginemail;
-                    echo "Session created.";
+
+                    header('/');
                     session_start();
                     if (isset($_SESSION['LoggedIn'])){
                         die('here');
