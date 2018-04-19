@@ -43,7 +43,9 @@
                         Password
                         <input type="password" name="loginpassword" value="" id="login_passinput" placeholder="Password" required>
                         <input type="submit" name="send" value="Login" id="login_submit">
+                        <a href="/upload/index">Post a Picture</a>
                     </p>
+                    
                 </form>
                 '
             ?>
