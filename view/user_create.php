@@ -2,7 +2,7 @@
 
 <?php
 
-$form = new Form('/user/doCreate');
+$form = new Form('/registration/doCreate');
 
 echo $form->text()->label('Name')->name('firstName');
 echo $form->text()->label('Surname')->name('lastName');

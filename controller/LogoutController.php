@@ -8,12 +8,15 @@
  */
 class LogoutController
 {
-public function index(){
-    $view = new View('user_index');
-    $view->title = 'Logged out';
-    $view->heading = '';
-    $view->subtitle = 'logged out';
-    $view->display();
+    public function index(){
+        $view = new View('user_index');
+        $view->title = 'Logged out';
+        $view->heading = '';
+        $view->subtitle = 'logged out';
+        $view->display();
+    }
 
-}
+    public function doLogout(){
+
+    }
 }

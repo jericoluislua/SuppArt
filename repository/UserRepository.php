@@ -61,6 +61,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
 
+        $query = "SELECT * FROM $this->tableName WHERE id = ?";
         $query = "SELECT email FROM $this->tableName WHERE email = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
 

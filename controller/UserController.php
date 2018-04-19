@@ -12,53 +12,11 @@ class UserController
         $userRepository = new UserRepository();
 
         $view = new View('user_index');
-        $view->title = 'Login';
-        $view->subtitle = 'Login';
+        $view->title = 'Logged in';
+        $view->subtitle = 'Logged in';
         $view->heading = '';
         $view->users = $userRepository->readAll();
         $view->display();
-    }
-    public function login(){
-
-        $view = new View('user_login');
-        $view->title = 'Login';
-        $view->subtitle = 'Login';
-        $view->heading = '';
-        $view->display();
-    }
-
-    public function doLogin()
-    {
-        if($_POST['loginsend']) {
-
-            $loginemail = $_POST['loginemail'];
-            $loginpassword  = $_POST['loginpassword'];
-
-            if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail'])){
-                $userRepository = new UserRepository();
-                $userRepository->login($loginemail, $loginpassword);
-            }
-
-
-        }
-
-    }
-    public function doCreate()
-    {
-        if ($_POST['send']) {
-            $firstName = $_POST['firstName'];
-            $lastName = $_POST['lastName'];
-            $email = $_POST['email'];
-            $password  = $_POST['password'];
-            $admin = $_POST['admin'];
-            $password = 'no_password';
-
-            $userRepository = new UserRepository();
-            $userRepository->create($firstName, $lastName, $email, $password, $admin);
-        }
-
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user/');
     }
 
     public function delete()

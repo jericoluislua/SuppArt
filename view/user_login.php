@@ -2,7 +2,7 @@
 
 <?php
 
-$form = new Form('/user/doLogin');
+$form = new Form('/login/doLogin');
 
 
 echo $form->email()->label('E-Mail')->name('loginemail');
