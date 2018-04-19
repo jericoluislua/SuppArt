@@ -14,7 +14,7 @@ class UserRepository extends Repository
      * Funktionen zur Verfügung zu stellen.
      */
     protected $tableName = 'user';
-
+    protected $id = 'id';
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
      *
@@ -37,16 +37,16 @@ class UserRepository extends Repository
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         if($admin === "flourish"){
-            $isAdmin = true;
+            $isAdmin = 1;
 
         }
         else if($admin === ""){
-            $isAdmin = false;
+            $isAdmin = 0;
 
         }
 
 
-        $statement->bind_param('ssssb', $firstName, $lastName, $email, $password, $isAdmin);
+        $statement->bind_param('ssssi', $firstName, $lastName, $email, $password, $isAdmin);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
@@ -55,5 +55,23 @@ class UserRepository extends Repository
 
 
         return $statement->insert_id;
+    }
+
+    public function login( $email, $password)
+    {
+        $password = sha1($password);
+
+        $query = "SELECT email, password FROM $this->tableName WHERE id = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+
+        $statement->bind_param('ss', $email, $password);
+
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+
+
+
+        return $statement->select_id;
     }
 }

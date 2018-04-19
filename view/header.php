@@ -31,17 +31,21 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">SuppArt</a>
-            <?php
 
-            echo '
-            <form id="login" method="post" action="/Login">
-            <p class="login_title">Username
-            <input type="email" name="E-Mail" value="" class="login_area" placeholder="Username or Email"></p>
-            <p class="login_title">Password
-            <input type="password" name="Password" class="login_area" value="" placeholder="Password">
-            <input type="submit" name="login"/></p>
-            </form>
-            ';
+            <?php
+                echo '
+                <form id="login" method="post" action="/user">
+                    <p class="login_email">
+                        E-Mail
+                        <input type="email" name="email" value="" id="login_emailinput" placeholder="E-Mail" required>
+                    </p>
+                    <p class="login_password">
+                        Password
+                        <input type="password" name="password" value="" id="login_passinput" placeholder="Password" required>
+                        <input type="submit" name="send" value="Login" id="login_submit">
+                    </p>
+                </form>
+                '
             ?>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -60,7 +64,7 @@
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="/user">Login</a></li>
                 <li><a href="/registration">Registration</a></li>
                 <li><a href="/logout">Logout</a></li>
 

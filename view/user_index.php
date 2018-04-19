@@ -2,11 +2,11 @@
 	<?php
     if (!empty($users)):
         foreach ($users as $user){
-            $form = new Form('/user/doCreate');
+            $form = new Form('/user/doLogin');
 
-            echo $form->text()->label('E-Mail')->name('email');
-            echo $form->password()->label('Password')->name('password');
-            echo $form->submit()->label('login')->name('send');
+            echo $form->text()->label('E-Mail')->name('loginemail');
+            echo $form->password()->label('Password')->name('loginpassword');
+            echo $form->submit()->label('login')->name('loginsend');
 
             $form->end();
         }

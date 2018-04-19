@@ -20,7 +20,7 @@ class EmailBuilder extends Builder
         $result = '<div class="form-group">';
         $result .= "    <label class=\"col-md-2 control-label\" for=\"textinput\">{$this->label}</label>";
         $result .= '    <div class="col-md-4">';
-        $result .= "        <input name=\"{$this->name}\" type=\"email\" value=\"{$this->value}\" class=\"form-control input-md\">";
+        $result .= "        <input name=\"{$this->name}\" type=\"email\" value=\"{$this->value}\" class=\"form-control input-md\" required>";
         $result .= '    </div>';
         $result .= '</div>';
 
