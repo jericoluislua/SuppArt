@@ -18,6 +18,7 @@ class LogoutController
 
     public function doLogout(){
         session_destroy();
+        session_unset();
         die("Logout succesfully.");
     }
 }

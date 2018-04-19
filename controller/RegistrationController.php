@@ -22,7 +22,6 @@ class RegistrationController
             $email = $_POST['email'];
             $password  = $_POST['password'];
             $admin = $_POST['admin'];
-            $password = 'no_password';
 
             $userRepository = new UserRepository();
             $userRepository->create($firstName, $lastName, $email, $password, $admin);

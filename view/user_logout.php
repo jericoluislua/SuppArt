@@ -1,3 +1,6 @@
+<div id="regform">
+
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,3 +8,7 @@
  * Date: 19.04.2018
  * Time: 12:57
  */
+
+
+?>
+</div>
