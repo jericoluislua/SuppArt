@@ -18,7 +18,7 @@ class LogoutController
     }
 
     public function doLogout(){
-        session_start();
+        //session_start();
         if(isset($_SESSION['LoggedIn'])){
             session_destroy();
             session_unset($_SESSION['LoggedIn']);

@@ -29,20 +29,22 @@ class LoginController
             //??
             if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail'])){
                 $userRepository = new UserRepository();
-                $isLoggedIn = $userRepository->login($loginemail, $loginpassword);
-                if(isset($isLoggedIn)){
+                $valid = $userRepository->login($loginemail, $loginpassword);
+                if(!isset($valid)){
+                    //echo "Invalid Username or Password.";
+                }else{
                     $_SESSION['LoggedIn'] = $loginemail;
 
                     header('/');
                     session_start();
-                    if (isset($_SESSION['LoggedIn'])){
+                    if (!isset($_SESSION["LoggedIn"])){
+                        echo "Session not yet started.";
+                    }else{
                         die('here');
 
                         echo "Session has started.";
                         echo $_SESSION['LoggedIn'];
                     }
-                }else{
-                    //echo "Invalid Username or Password.";
                 }
             }
 
