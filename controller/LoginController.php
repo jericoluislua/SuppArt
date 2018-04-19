@@ -1,5 +1,7 @@
 <?php
 
+require_once '../repository/UserRepository.php';
+
 /**
  * Created by PhpStorm.
  * User: bluaje
