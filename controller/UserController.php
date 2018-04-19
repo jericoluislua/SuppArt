@@ -15,16 +15,22 @@ class UserController
         $view->title = 'Login';
         $view->subtitle = 'Login';
         $view->heading = '';
-        $view->users = $userRepository->readAll();
+        $view->users = $userRepository->readAll(1);
         $view->display();
     }
     public function doLogin()
     {
         if($_POST['loginsend']) {
+
             $loginemail = $_POST['loginemail'];
             $loginpassword  = $_POST['loginpassword'];
-            $userRepository = new UserRepository();
-            $userRepository->login($loginemail, $loginpassword);
+
+            if(!empty($_POST['loginpassword']) && !empty($_POST['loginemail'])){
+                $userRepository = new UserRepository();
+                $userRepository->login($loginemail, $loginpassword);
+            }
+
+
         }
         header('Location: /user');
     }

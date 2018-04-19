@@ -31,7 +31,7 @@ adminpw: flourish
 
 database: ArtDB
 	table: 
-	USER = id INT PK NOT NULL AI, firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50)NOT NULL, email VARCHAR(50)NOT NULL, password INT(80)NOT NULL, admin BOOLEAN
+	USER = id INT PK NOT NULL AI, firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50)NOT NULL, email VARCHAR(50)NOT NULL, password VARCHAR(80)NOT NULL, admin BOOLEAN
 	POSTS = postid, userid, bildid
 	IMAGE = id INT PK NOT NULL AI, imgname VARCHAR(50) NOT NULL
 	BILD_KOMMENTAR = bkid, bildid, 
@@ -42,4 +42,4 @@ table export
 	Exportiereren
 	scroll
 	Objekterstellungsoptionen
-	CREATE TABLE-Befehl hinzufügen
+	CREATE TABLE-Befehl hinzufï¿½gen

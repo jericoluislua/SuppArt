@@ -35,11 +35,11 @@
             <?php
                 echo '
                 <form id="login" method="post" action="/user">
-                    <p class="login_email">
+                    <p class="login_title">
                         E-Mail
                         <input type="email" name="email" value="" id="login_emailinput" placeholder="E-Mail" required>
                     </p>
-                    <p class="login_password">
+                    <p class="login_title" >
                         Password
                         <input type="password" name="password" value="" id="login_passinput" placeholder="Password" required>
                         <input type="submit" name="send" value="Login" id="login_submit">
