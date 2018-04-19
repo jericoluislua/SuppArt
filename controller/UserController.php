@@ -15,7 +15,15 @@ class UserController
         $view->title = 'Login';
         $view->subtitle = 'Login';
         $view->heading = '';
-        $view->users = $userRepository->readAll(1);
+        $view->users = $userRepository->readAll();
+        $view->display();
+    }
+    public function login(){
+
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->subtitle = 'Login';
+        $view->heading = '';
         $view->display();
     }
     public function doLogin()
@@ -25,14 +33,14 @@ class UserController
             $loginemail = $_POST['loginemail'];
             $loginpassword  = $_POST['loginpassword'];
 
-            if(!empty($_POST['loginpassword']) && !empty($_POST['loginemail'])){
+            if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail'])){
                 $userRepository = new UserRepository();
                 $userRepository->login($loginemail, $loginpassword);
             }
 
 
         }
-        header('Location: /user');
+
     }
     public function doCreate()
     {
@@ -49,7 +57,7 @@ class UserController
         }
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+        header('Location: /user/');
     }
 
     public function delete()

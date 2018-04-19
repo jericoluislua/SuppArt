@@ -34,14 +34,14 @@
 
             <?php
                 echo '
-                <form id="login" method="post" action="/user">
+                <form id="login" method="post" action="/user/login">
                     <p class="login_title">
                         E-Mail
-                        <input type="email" name="email" value="" id="login_emailinput" placeholder="E-Mail" required>
+                        <input type="email" name="loginemail" value="" id="login_emailinput" placeholder="E-Mail" required>
                     </p>
                     <p class="login_title" >
                         Password
-                        <input type="password" name="password" value="" id="login_passinput" placeholder="Password" required>
+                        <input type="password" name="loginpassword" value="" id="login_passinput" placeholder="Password" required>
                         <input type="submit" name="send" value="Login" id="login_submit">
                     </p>
                 </form>
@@ -64,7 +64,7 @@
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
-                <li><a href="/user">Login</a></li>
+                <li><a href="/user/dologin">Login</a></li>
                 <li><a href="/registration">Registration</a></li>
                 <li><a href="/logout">Logout</a></li>
 
