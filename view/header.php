@@ -43,7 +43,9 @@
                         Password
                         <input type="password" name="loginpassword" value="" id="login_passinput" placeholder="Password" required>
                         <input type="submit" name="send" value="Login" id="login_submit">
+                        <a href="/upload/index">Post a Picture</a>
                     </p>
+                    
                 </form>
                 '
             ?>
@@ -66,7 +68,7 @@
                 </li>
                 <li><a href="/user/login">Login</a></li>
                 <li><a href="/registration">Registration</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/user/logout">Logout</a></li>
 
             </ul>
         </div><!--/.nav-collapse -->
