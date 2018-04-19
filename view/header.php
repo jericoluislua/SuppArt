@@ -52,7 +52,7 @@
             <ul class="listload">
                 <li>
                     <a>Drawings</a>
-                    <ul>
+                    <ul>s
                         <a href="digital.html">Digital</a>
                         <a href="hand.html">Handmade</a>
                     </ul>
@@ -64,9 +64,9 @@
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
-                <li><a href="/user/login">Login</a></li>
-                <li><a href="/registration">Registration</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/registration/">Registration</a></li>
+                <li><a href="/logout/">Logout</a></li>
 
             </ul>
         </div><!--/.nav-collapse -->
