@@ -1,4 +1,4 @@
-<article class="hreview open special">
+<article class="review open special">
 	<?php
     if (!empty($users)):
         foreach ($users as $user){
