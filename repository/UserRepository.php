@@ -69,25 +69,23 @@ class UserRepository extends Repository
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
-        $row = mysqli_num_rows($statement);
 
-        if($row == 1){
-            echo "logged in";
-            session_start();
-        }
-        else{
-            echo "Wrong email or password";
-        }
 
-        if($row == 1){
-            echo 'found';
-        } else {
-            echo 'not found';
-        }
+
+        //if($row == 1){
+        //    echo 'found';
+        //} else {
+        //    echo 'not found';
+        //}
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
-        return $statement->get_result();
+        $result = $statement->get_result();
+        $resultrows = $result->num_rows;
+
+
+        echo $resultrows;
+        return $resultrows;
     }
 }
