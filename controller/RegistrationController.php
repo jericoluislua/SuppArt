@@ -28,7 +28,7 @@ class RegistrationController
             $userRepository->create($firstName, $lastName, $email, $password, $admin);
         }
 
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /user/');
+
     }
 }

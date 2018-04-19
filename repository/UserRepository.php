@@ -32,7 +32,7 @@ class UserRepository extends Repository
     public function create($firstName, $lastName, $email, $password, $admin)
     {
         $isAdmin = false;
-        $password = sha1($password);
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO $this->tableName (firstName, lastName, email, password, admin) VALUES (?, ?, ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
@@ -59,27 +59,33 @@ class UserRepository extends Repository
 
     public function login( $email, $password)
     {
-        $password = sha1($password);
 
-        $query = "SELECT * FROM $this->tableName WHERE id = ?";
-        $query = "SELECT email FROM $this->tableName WHERE email = ?";
+
+        $query = "SELECT password FROM $this->tableName WHERE email = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
 
-        $statement->bind_param('ss', $email, $password);
+        $statement->bind_param('s', $email);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
 
-
-        if (!$statement->execute()) {
-            throw new Exception($statement->error);
-        }
         $result = $statement->get_result();
-        $resultrows = $result->num_rows;
 
+        if($result->num_rows == 0){
+            return false;
+        }
 
-        echo $resultrows;
-        return $resultrows;
+        $user = $result->fetch_object();
+
+        if(password_verify($password,$user->password)){
+            session_start();
+            if (session_start()){
+                echo "Session has started.";
+            }
+            return true;
+        }
+
+        return false;
     }
 }

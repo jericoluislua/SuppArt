@@ -21,14 +21,21 @@ class LoginController
 
     public function doLogin()
     {
-        if($_POST['loginsend']) {
+        if(isset($_POST['loginsend'])) {
 
             $loginemail = $_POST['loginemail'];
             $loginpassword  = $_POST['loginpassword'];
 
+            //??
             if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail'])){
                 $userRepository = new UserRepository();
-                $userRepository->login($loginemail, $loginpassword);
+                $isLoggedIn = $userRepository->login($loginemail, $loginpassword);
+                if($isLoggedIn){
+                    $_SESSION['loggedIn'] = $loginemail;
+                    echo "Session created.";
+                }else{
+                    echo "Invalid Username or Password.";
+                }
             }
 
 
