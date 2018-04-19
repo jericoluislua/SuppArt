@@ -72,11 +72,7 @@ class UserRepository extends Repository
 
 
 
-        //if($row == 1){
-        //    echo 'found';
-        //} else {
-        //    echo 'not found';
-        //}
+
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
