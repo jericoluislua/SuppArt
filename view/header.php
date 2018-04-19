@@ -64,7 +64,7 @@
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
-                <li><a href="/user/dologin">Login</a></li>
+                <li><a href="/user/login">Login</a></li>
                 <li><a href="/registration">Registration</a></li>
                 <li><a href="/logout">Logout</a></li>
 
