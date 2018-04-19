@@ -4,7 +4,7 @@
         foreach ($users as $user){
             $form = new Form('/user/doLogin');
 
-            echo $form->text()->label('E-Mail')->name('loginemail');
+            echo $form->email()->label('E-Mail')->name('loginemail');
             echo $form->password()->label('Password')->name('loginpassword');
             echo $form->submit()->label('login')->name('loginsend');
 
