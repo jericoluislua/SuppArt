@@ -1,7 +1,13 @@
 <div id="regform">
 
 <?php
+
+require_once '../controller/LoginController.php';
+
 $form = new Form('/login/doLogin');
+
+
+
 
 
 echo $form->email()->label('E-Mail')->name('loginemail');

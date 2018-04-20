@@ -17,6 +17,9 @@ class LoginController
         $view->subtitle = 'Login';
         $view->heading = '';
         $view->display();
+        if(!isset($_SESSION['LoggedIn'])){
+            echo "Invalid Username or Password.";
+        }
     }
 
     public function doLogin()
@@ -27,21 +30,28 @@ class LoginController
             $loginpassword  = $_POST['loginpassword'];
 
             //??
-            if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail'])){
+            if(!empty($_POST['loginpassword']) & !empty($_POST['loginemail']))
+            {
                 $userRepository = new UserRepository();
                 $valid = $userRepository->login($loginemail, $loginpassword);
-                if(!isset($valid)){
-                    //echo "Invalid Username or Password.";
-                }else{
-                    $_SESSION['LoggedIn'] = $loginemail;
-                    header('/user');
-                    if (!isset($_SESSION["LoggedIn"])){
-                        echo "Session not yet started.";
-                    }else{
 
-                        echo "Session has started. <br/>";
-                        echo $_SESSION['LoggedIn'];
-                    }
+                if(!empty($valid))
+                {
+                    $_SESSION['LoggedIn'] = $loginemail;
+                    echo "Login successful.";
+                }
+                else
+                {
+                    echo header();
+                }
+
+                if(isset($_SESSION['LoggedIn']))
+                {
+                   header('Location: /');
+
+                }
+                else{
+                    header('Location: /login');
                 }
             }
 
@@ -50,3 +60,17 @@ class LoginController
 
     }
 }
+
+
+
+/*if (!isset($_SESSION['LoggedIn']))
+{
+    //var_dump($valid);
+
+    echo "Session not yet started.";
+}else
+{
+    //var_dump($valid);
+
+    echo "Session already starting. <br/>";
+}*/

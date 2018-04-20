@@ -24,10 +24,14 @@ class LogoutController
             session_unset($_SESSION['LoggedIn']);
             unset($_SESSION['LoggedIn']);
             echo "Logout succesfully.";
+            header('Location: /');
 
         }
         elseif (!isset($_SESSION['loggedIn'])){
             echo "Have not logged in";
+            $loggedOut = true;
+            header('Location: /?loggedOut=true');
+
         }
 
     }
