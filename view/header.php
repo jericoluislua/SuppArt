@@ -66,15 +66,26 @@
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
-                <li><a href="/login/">Login</a></li>
-                <li><a href="/registration/">Registration</a></li>
-                <li><a href="/logout/doLogout">Logout</a></li>
+                <?php
 
+                    if(!isset($_SESSION['LoggedIn'])) {
+
+                        echo "    
+                        <li ><a href = '/login/' > Login</a></li>
+                        <li ><a href = '/registration/' > Registration</a></li>
+                        ";
+                    }
+
+                    else{
+                        echo "
+                        <li><a href = '/logout/doLogout' > Logout</a></li>
+                        ";
+                        }
+                ?>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
     <h1 class="subtitles"><?= $subtitle?></h1>
 
-
-
+}
