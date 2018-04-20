@@ -9,6 +9,8 @@ session_start();
  * auf eine bestehende Datei zeigen hierhin umgeleitet.
  */
 
+require_once '../lib/Security.php';
+require_once '../lib/Message.php';
 require_once '../lib/Dispatcher.php';
 require_once '../lib/formbuilder/FormBuilder.php';
 require_once '../lib/View.php';

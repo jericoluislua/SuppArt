@@ -26,6 +26,6 @@
 
         ?>
     </p>
-    <?php include_once('post_index.php');?>
+    <?php require_once('post_index.php');?>
 
 </div>

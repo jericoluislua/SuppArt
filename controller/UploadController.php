@@ -11,7 +11,7 @@ class UploadController
         $view->subtitle ="Post an image";
         $view->display();
     }
-    public function upload(){
+    public function doUpload(){
             if (isset($_POST['send'])) {
                 $destination = "/SuppArt/uploads/";
                 $picture_array = $_FILES['picture'];
@@ -35,9 +35,9 @@ class UploadController
                             //updates new imagepath in database
                             if ($postRepository->update_picture($insertId, $dst)) {
                                 if ($private == 'true') {
-                                    Message::set("upload", "Upload successful! Go to <a href=\"/post/privatePost\">Private Post</a>");
+                                    Message::set("upload", "Upload successful! Go to <a href=\"post/privatePost\">Private Post</a>");
                                 } else {
-                                    Message::set("upload", "Upload successful! Go to <a href=\"/post\">Post</a>");
+                                    Message::set("upload", "Upload successful! Go to <a href=\"post/\">Post</a>");
                                 }
                             }
                         }

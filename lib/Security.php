@@ -5,7 +5,7 @@ class Security
     const ADMIN = "denis.chanmong@gmail.com" | "jericoluislua@yahoo.com.ph";
     //static function to check if user is logged in
     public static function isAuthenticated() {
-        return isset($_SESSION[Security::SESSION_USER]) && $_SESSION[Security::SESSION_USER]->id > 0;
+        return isset($_SESSION[Security::getUser()]) && $_SESSION[Security::getUser()]->id > 0;
     }
     //static function to get current user
     public static function getUser() {
@@ -13,12 +13,12 @@ class Security
     }
     //static function to get current user's id
     public static function getUserId() {
-        return (!empty($_SESSION[Security::SESSION_USER])) ? $_SESSION[Security::SESSION_USER]->id : 0;
+        return (!empty($_SESSION[Security::getUser()])) ? $_SESSION[Security::getUser()]->id : 0;
     }
     //static function to check if user is admin
     public static function isAdmin(){
-        if (isset($_SESSION[Security::SESSION_USER])){
-            if ($_SESSION[Security::SESSION_USER]->email==Security::ADMIN){
+        if (isset($_SESSION[Security::getUser()])){
+            if ($_SESSION[Security::getUser()]->email==Security::ADMIN){
                 return true;
             }
             else{
