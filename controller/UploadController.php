@@ -39,6 +39,8 @@ class UploadController
                                 } else {
                                     Message::set("upload", "Upload successful! Go to <a href=\"post/\">Post</a>");
                                 }
+
+                                header('Location: /');
                             }
                         }
                     }

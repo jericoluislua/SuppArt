@@ -17,10 +17,12 @@
                 <label class="col-md-2 control-label" for="private">Private</label>
                 <input id="private" name="private" type="checkbox" value="true" placeholder="">
             </p>
+
             <p>
                 <label class="col-md-2 control-label" for="drawing">Drawing</label>
                 <input id="drawing" name="drawing" type="checkbox" value="true" placeholder="">
             </p>
+            <!--
             <p>
                 <label class="col-md-2 control-label" for="photograph">Photograph</label>
                 <input id="photograph" name="photograph" type="checkbox" value="true" placeholder="">
