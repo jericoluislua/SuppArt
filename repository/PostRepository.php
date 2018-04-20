@@ -1,5 +1,7 @@
 <?php
+
 require_once '../lib/Repository.php';
+
 class PostRepository extends Repository
 {
     protected $tableName = 'post';

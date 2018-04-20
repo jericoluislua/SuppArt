@@ -9,8 +9,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1><?= $entries->title ;?></h1>
-                        <?php if(($_SESSION['LoggedIn']::getUser()->email == $entries->creator)){ ?>
-                            <a title='comment' href='/post/changeTitle?id=<?=$entries->id?>'>Change title</a>
+                        <?php if((Security::isAuthenticated() && Security::getUser()->email == $entries->creator) || Security::isAdmin()){ ?>
+                            <a title='comment' href='/upload/changeTitle?id=<?=$entries->id?>'>Change title</a>
                         <?php } ?>
                         <p class="poster_date">Date: <?= $entries->date ?></p>
                     </div>

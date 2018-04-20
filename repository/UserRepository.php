@@ -33,12 +33,11 @@ class UserRepository extends Repository
     {
         $isAdmin = false;
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO $this->tableName (firstName, lastName, email, password, admin) VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName(firstName, lastName, email, password, admin) VALUES (?, ?, ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         if($admin === "flourish"){
             $isAdmin = 1;
-
         }
         else if($admin === ""){
             $isAdmin = 0;
