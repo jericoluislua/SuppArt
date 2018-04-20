@@ -54,6 +54,9 @@ a:hover{
    width: 100%;
    margin: 0 auto;
  }
+ .form-horizontal{
+   margin-top: 20px;
+ }
 .mid-section{
   height: 400px;
   background-image: url("/images/mid_background.png");

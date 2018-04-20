@@ -4,11 +4,43 @@ class UploadController
 {
     public function index()
     {
+        $postRepository = new PostRepository();
         $view = new View('post_upload');
         $view->title = 'Post an image';
         $view->heading = '';
         $view->subtitle ="Post an image";
+        $view->entry = $postRepository->readAllSortedByNewest();
         $view->display();
+    }
+    public function changeTitle()
+    {
+        if (Security::isAuthenticated() && isset($_GET['id'])) {
+            $this->doChangeTitle();
+            $view = new View('blog_change');
+            $view->id = $_GET['id'];
+            $view->title = 'Change title';
+            $view->heading = 'Change title';
+            $view->display();
+        }else{
+            echo'you are not logged in!';
+        }
+    }
+    //change title function
+    private function doChangeTitle()
+    {
+        if (isset($_POST['send'])) {
+            $newtitle = htmlspecialchars($_POST['title']);
+            $blogRepository = new PostRepository();
+            $blog = $blogRepository->readById($_GET['id']);
+            if (($blog->creator == Security::getUser()->email) || Security::isAdmin()) {
+                //call to updateTitle
+                if ($blogRepository->updateTitle($blog->id, $newtitle)) {
+                    echo "'update', 'update Successful! go to <a href='/post/privatePage'>Private post</a>')";
+                }else{
+                    Message::set("update", "update failed, please try again or ask the administrator");
+                }
+            }
+        }
     }
     public function upload(){
         $target_dir = "/SuppArt/uploads/";
@@ -53,5 +85,25 @@ class UploadController
                 echo "Sorry, there was an error uploading your file.";
             }
         }
+    }
+    public function delete()
+    {
+        //can only delete if user is logged in and image id is set.
+        if (Security::isAuthenticated() && isset($_GET['id'])) {
+            $postId = $_GET['id'];
+            $postRepository = new PostRepository();
+            //call to readById
+            $blog = $postRepository->readById($postId);
+            //only creator and admin can delete image
+            if (($blog->creator == Security::getUser()->email) || Security::isAdmin()) {
+                //call to get_picture_path
+                $path = $postRepository->get_picture_path($postId);
+                if ($postRepository->deleteById($postId)) {
+                    unlink($path);
+                }
+            }
+        }
+        // redirects back to last page
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

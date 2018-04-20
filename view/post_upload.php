@@ -24,5 +24,6 @@
                 <input id="send" name="send" type="submit" class="btn btn-primary" value="upload">
             </div>
         </div>
+        <a href='/upload/post_index.php'>lets see uploads</a>
     </div>
 </form>

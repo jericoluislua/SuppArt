@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vmadmin
- * Date: 20.04.2018
- * Time: 00:10
- */
 
 require_once '../lib/Repository.php';
 require_once 'UserRepository.php';

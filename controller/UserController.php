@@ -12,8 +12,8 @@ class UserController
         $userRepository = new UserRepository();
 
         $view = new View('user_index');
-        $view->title = 'Logged in';
-        $view->subtitle = 'Logged in';
+        $view->title = 'Users';
+        $view->subtitle = 'All Users';
         $view->heading = '';
         $view->users = $userRepository->readAll();
         $view->display();

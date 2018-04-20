@@ -9,7 +9,7 @@
 
 CREATE TABLE `comments` (
   `id` int(10) UNSIGNED NOT NULL,
-  `blogid` int(10) UNSIGNED NOT NULL,
+  `postid` int(10) UNSIGNED NOT NULL,
   `userid` int(10) UNSIGNED NOT NULL,
   `comment` varchar(400) NOT NULL,
   `time` date NOT NULL
@@ -26,10 +26,10 @@ CREATE TABLE `user` (
 
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`);
-  
+
   ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `comments_ibfk_1` (`blogid`),
+  ADD KEY `comments_ibfk_1` (`postid`),
   ADD KEY `comments_ibfk_2` (`userid`);
 
 
@@ -38,7 +38,7 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `email` (`email`);
 
 
-ALTER TABLE `blog`
+ALTER TABLE `post`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT für Tabelle `comments`
@@ -50,9 +50,9 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `user`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-  
+
   ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`blogid`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`postid`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
