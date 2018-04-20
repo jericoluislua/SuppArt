@@ -34,15 +34,12 @@ class LoginController
                     //echo "Invalid Username or Password.";
                 }else{
                     $_SESSION['LoggedIn'] = $loginemail;
-
-                    header('/');
-                    session_start();
+                    header('/user');
                     if (!isset($_SESSION["LoggedIn"])){
                         echo "Session not yet started.";
                     }else{
-                        die('here');
 
-                        echo "Session has started.";
+                        echo "Session has started. <br/>";
                         echo $_SESSION['LoggedIn'];
                     }
                 }

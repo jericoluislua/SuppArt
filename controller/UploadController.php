@@ -4,14 +4,14 @@ class UploadController
 {
     public function index()
     {
-        $view = new View('user_upload');
-        $view->title = 'Upload Your Picture';
-        $view->subtitle = 'Post';
+        $view = new View('post_upload');
+        $view->title = 'Post an image';
         $view->heading = '';
+        $view->subtitle ="Post an image";
         $view->display();
     }
     public function upload(){
-        $target_dir = "uploads/";
+        $target_dir = "/SuppArt/uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -44,7 +44,7 @@ class UploadController
         }
 // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
+            echo " Your file was not uploaded.";
 // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
