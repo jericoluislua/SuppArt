@@ -13,10 +13,20 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label" for="private">Private</label>
-            <div class="col-md-4">
+            <p>
+                <label class="col-md-2 control-label" for="private">Private</label>
                 <input id="private" name="private" type="checkbox" value="true" placeholder="">
-            </div>
+            </p>
+            <p>
+                <label class="col-md-2 control-label" for="drawing">Drawing</label>
+                <input id="drawing" name="drawing" type="checkbox" value="true" placeholder="">
+            </p>
+            <p>
+                <label class="col-md-2 control-label" for="photograph">Photograph</label>
+                <input id="photograph" name="photograph" type="checkbox" value="true" placeholder="">
+            </p>
+                <!-- <input id="scenery" name="scenery" type="checkbox" value="true" placeholder="">
+                <input id="portrait" name="portrait" type="checkbox" value="true" placeholder=""> -->
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="send">&nbsp;</label>

@@ -61,19 +61,22 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="listload">
                 <li>
-                    <a>Drawings</a>
-                    <ul>s
+                    <a href="/post/">Drawings</a>
+                    <!--
+                    <ul>
                         <a href="digital.html">Digital</a>
                         <a href="hand.html">Handmade</a>
-                    </ul>
+                    </ul>-->
                 </li>
+                <!--
                 <li>
-                    <a>Photographs</a>
+                    <a href="/portrait.html">Photographs</a>
                     <ul>
                         <a href="scenery.html">Scenery</a>
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
+                -->
                 <?php
 
                     if(!isset($_SESSION['LoggedIn'])) {
