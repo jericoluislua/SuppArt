@@ -10,7 +10,6 @@
     <p>
         <?php
 
-
         if(isset($_SESSION['LoggedIn'])) {
             echo 'Welcome ' . $_SESSION['LoggedIn'];
 
@@ -23,9 +22,11 @@
             }
 
         }
-
+        require_once('post_index.php');
         ?>
     </p>
-    <?php require_once('post_index.php');?>
+    <?php
+
+    ?>
 
 </div>

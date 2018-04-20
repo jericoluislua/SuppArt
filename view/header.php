@@ -89,6 +89,7 @@
                         <li><a href='/post/privatePost'>Your Posts</a></li>
                         <li><a href='/upload'>Post a Picture</a></li>
                         <li class='nav-float-right'><a href = '/logout/doLogout' > Logout</a></li>
+                        <li><a href='/user'>Users</a></li>
                         ";
                         }
                 ?>
