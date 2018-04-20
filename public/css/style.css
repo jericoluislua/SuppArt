@@ -16,7 +16,10 @@ a:hover{
 .login_title{
   color: white;
 }
-
+#postlink{
+  color:white;
+  float: right;
+}
 .navbar-header{
   background-color: #313d54;
   height: 100px;
