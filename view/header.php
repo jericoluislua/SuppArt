@@ -33,21 +33,29 @@
           <a class="navbar-brand" href="/">SuppArt</a>
 
             <?php
-                echo '
-                <form id="login" method="post" action="/user/login">
-                    <p class="login_title">
+            if(!isset($_SESSION['LoggedIn'])) {
+
+            echo "
+                <form id='login' method='post' action='/user/login'>
+                    <p class='login_title'>
                         E-Mail
-                        <input type="email" name="loginemail" value="" id="login_emailinput" required>
+                        <input type='email' name='loginemail' value=' id='login_emailinput' required>
                     </p>
-                    <p class="login_title" >
+                    <p class='login_title' >
                         Password
-                        <input type="password" name="loginpassword" value="" id="login_passinput" required>
-                        <input type="submit" name="loginsend" value="Login" id="login_submit">
-                        <a href="/upload/index">Post a Picture</a>
+                        <input type='password' name='loginpassword' value=' id='login_passinput' required>
+                        <input type='submit' name='loginsend' value='Login' id='login_submit'>
+                        
                     </p>
                     
                 </form>
-                '
+                ";
+            }
+            else{
+                echo "
+                <a id='postlink' href='/upload/index'>Post a Picture</a>
+                ";
+            }
             ?>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -66,15 +74,25 @@
                         <a href="portrait.html">Portrait</a>
                     </ul>
                 </li>
-                <li><a href="/login/">Login</a></li>
-                <li><a href="/registration/">Registration</a></li>
-                <li><a href="/logout/doLogout">Logout</a></li>
+                <?php
 
+                    if(!isset($_SESSION['LoggedIn'])) {
+
+                        echo "    
+                        <li ><a href = '/login/' > Login</a></li>
+                        <li ><a href = '/registration/' > Registration</a></li>
+                        ";
+                    }
+
+                    else{
+                        echo "
+                        <li><a href = '/logout/doLogout' > Logout</a></li>
+                        ";
+                        }
+                ?>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
     <h1 class="subtitles"><?= $subtitle?></h1>
-
-
 
