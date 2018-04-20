@@ -39,12 +39,12 @@
                 <form id='login' method='post' action='/login'>
                     <p class='login_title'>
                         E-Mail
-                        <input type='email' name='loginemail' value='' required>
+                        <input type='email' name='loginemail' value='' required class='login'>
                     </p>
                     <p class='login_title' >
                         Password
-                        <input type='password' name='loginpassword' value='' required>
-                        <input type='submit' name='loginsend' value='Login' id='login_submit'>
+                        <input type='password' name='loginpassword' value='' required class='login'>
+                        <input type='submit' name='loginsend' value='Login' class='login'>
                         
                     </p>
                     
