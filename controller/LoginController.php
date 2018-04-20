@@ -26,7 +26,7 @@ class LoginController
                 if(!empty($valid))
                 {
                     $_SESSION['LoggedIn'] = $loginemail;
-                    header('/');
+                    header('Location: /');
                 }
                 else
                 {
