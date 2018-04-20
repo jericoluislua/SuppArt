@@ -1,6 +1,7 @@
         <hr>
         <footer>
-          <p>&copy; ICT Berufsbildungcenter AG 2016</p>
+          <p>&copy; Jerico Lua and Denis Chanmongkhon</p>
+            <p>with the use of the BBC MVC Framework</p>
         </footer>
     </div>
 

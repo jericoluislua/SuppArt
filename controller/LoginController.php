@@ -10,22 +10,10 @@ require_once '../repository/UserRepository.php';
  */
 class LoginController
 {
-    public function index(){
-
-        $view = new View('user_login');
-        $view->title = 'Login';
-        $view->subtitle = 'Login';
-        $view->heading = '';
-        $view->display();
-        if(!isset($_SESSION['LoggedIn'])){
-            echo "Invalid Username or Password.";
-        }
-    }
-
-    public function doLogin()
+    public function index()
     {
-        if(isset($_POST['loginsend'])) {
-
+        if(isset($_POST['loginsend']))
+        {
             $loginemail = $_POST['loginemail'];
             $loginpassword  = $_POST['loginpassword'];
 
@@ -38,25 +26,24 @@ class LoginController
                 if(!empty($valid))
                 {
                     $_SESSION['LoggedIn'] = $loginemail;
-                    echo "Login successful.";
+                    header('/');
                 }
                 else
                 {
-                    echo header();
+                    echo "Invalid username or password.";
                 }
 
-                if(isset($_SESSION['LoggedIn']))
-                {
-                   header('Location: /');
-
-                }
-                else{
-                    header('Location: /login');
-                }
             }
 
 
         }
+
+
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->subtitle = 'Login';
+        $view->heading = '';
+        $view->display();
 
     }
 }

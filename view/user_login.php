@@ -4,7 +4,7 @@
 
 require_once '../controller/LoginController.php';
 
-$form = new Form('/login/doLogin');
+$form = new Form('/login');
 
 
 
