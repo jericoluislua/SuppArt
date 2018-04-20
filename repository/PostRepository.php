@@ -14,7 +14,11 @@ class PostRepository extends Repository
      * @return bool
      */
     //saves picturepath in database
+
     public function upload($picture, $title, $date, $creator, $private){
+        $picture = $_POST['fileToUpload'];
+        $title = $_POST['title'];
+        $creator = $_SESSION['user_id'];
         $query = "INSERT INTO $this->tableName (picture, title, date, creator, private) VALUES (?, ?, ?, ?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ssssi', $picture, $title, $date, $creator, $private);

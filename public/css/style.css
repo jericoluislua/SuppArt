@@ -50,6 +50,10 @@ a:hover{
    left: 0;
    z-index: 1030;
  }
+.nav-float-right{
+  float: right;
+  margin-right:10px;
+}
  .listload{
    width: 100%;
    margin: 0 auto;

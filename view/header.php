@@ -52,9 +52,7 @@
                 ";
             }
             else{
-                echo "
-                <a id='postlink' href='/upload'>Post a Picture</a>
-                ";
+
             }
             ?>
         </div>
@@ -83,13 +81,15 @@
 
                         echo "    
                         <!-- <li ><a href = '/login/' > Login</a></li> -->
-                        <li ><a href = '/registration/' > Registration</a></li>
+                        <li class='nav-float-right'><a href = '/registration/'> Sign Up</a></li>
                         ";
                     }
 
                     else{
                         echo "
-                        <li><a href = '/logout/doLogout' > Logout</a></li>
+                        <li><a href='/post/privatePost'>Your Posts</a></li>
+                        <li><a href='/upload'>Post a Picture</a></li>
+                        <li class='nav-float-right'><a href = '/logout/doLogout' > Logout</a></li>
                         ";
                         }
                 ?>

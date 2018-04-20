@@ -6,6 +6,8 @@
  * Date: 20.04.2018
  * Time: 11:07
  */
+
+require_once '../repository/PostRepository.php';
 class PostController
 {
     public function index(){
@@ -17,18 +19,19 @@ class PostController
         $view->entry = $postRepository->readAllSortedByNewest();
         $view->display();
     }
-    public function privateBlog()
+    public function privatePost()
     {
 
         $postRepository = new PostRepository();
-        $view = new View('blog_private');
+        $view = new View('post_index');
         $view->title = 'Your Submission';
-        $view->heading = 'Profile';
-        //call to readAllPrivate
+        $view->heading = '';
+        $view->subtitle = 'Your Posts';
         $view->entry = $postRepository->readAllPrivate();
         $view->display();
     }
     //Blog create view
+
     public function create()
     {
         if (Security::isAuthenticated()) {
