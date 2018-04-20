@@ -53,7 +53,7 @@
             }
             else{
                 echo "
-                <a id='postlink' href='/upload/index'>Post a Picture</a>
+                <a id='postlink' href='/upload'>Post a Picture</a>
                 ";
             }
             ?>

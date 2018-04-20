@@ -1,8 +1,8 @@
 <?php
 class Security
 {
-    const SESSION_USER = "user";
-    const admin = "denis.chanmong@gmail.com" | "jericoluislua@yahoo.com.ph";
+    const SESSION_USER = "loginuser";
+    const ADMIN = "denis.chanmong@gmail.com" | "jericoluislua@yahoo.com.ph";
     //static function to check if user is logged in
     public static function isAuthenticated() {
         return isset($_SESSION[Security::SESSION_USER]) && $_SESSION[Security::SESSION_USER]->id > 0;

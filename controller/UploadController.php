@@ -28,13 +28,13 @@ class UploadController
     //change title function
     private function doChangeTitle()
     {
-        if (isset($_POST['send'])) {
+        if (isset($_POST['submit'])) {
             $newtitle = htmlspecialchars($_POST['title']);
-            $blogRepository = new PostRepository();
-            $blog = $blogRepository->readById($_GET['id']);
-            if (($blog->creator == Security::getUser()->email) || Security::isAdmin()) {
+            $postRepository = new PostRepository();
+            $post = $postRepository->readById($_GET['id']);
+            if (($post->creator == Security::getUser()->email) || Security::isAdmin()) {
                 //call to updateTitle
-                if ($blogRepository->updateTitle($blog->id, $newtitle)) {
+                if ($postRepository->updateTitle($post->id, $newtitle)) {
                     echo "'update', 'update Successful! go to <a href='/post/privatePage'>Private post</a>')";
                 }else{
                     Message::set("update", "update failed, please try again or ask the administrator");
