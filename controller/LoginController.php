@@ -30,7 +30,7 @@ class LoginController
                 }
                 else
                 {
-                    echo "Invalid username or password.";
+                    header('Location: /');
                 }
 
             }
