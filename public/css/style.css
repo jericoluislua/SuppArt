@@ -22,7 +22,7 @@ a:hover{
 }
 .navbar-header{
   background-color: #313d54;
-  height: 100px;
+  height: 125px;
   width: 100%;
   padding: 15px;
   vertical-align: middle;
@@ -157,4 +157,7 @@ background-size: cover;
   color: black;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+}
+#loginsend{
+  float: right;
 }

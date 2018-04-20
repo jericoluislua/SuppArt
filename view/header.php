@@ -37,16 +37,15 @@
 
             echo "
                 <form id='login' method='post' action='/login'>
-                    <p class='login_title'>
+                    <p class='login_title' align='right'>
                         E-Mail
                         <input type='email' name='loginemail' value='' required class='login'>
                     </p>
-                    <p class='login_title' >
+                    <p class='login_title' align='right'>
                         Password
                         <input type='password' name='loginpassword' value='' required class='login'>
-                        <input type='submit' name='loginsend' value='Login' class='login'>
-                        
                     </p>
+                        <input type='submit' name='loginsend' value='Login' class='login' id='loginsend'>
                     
                 </form>
                 ";
