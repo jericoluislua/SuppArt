@@ -10,12 +10,18 @@
     <p>
         <?php
 
+
         if(isset($_SESSION['LoggedIn'])) {
             echo 'Welcome ' . $_SESSION['LoggedIn'];
 
         }
-        elseif(isset($loggedOut)){
-            echo 'Succesfully logged out. Welcome Guest.';
+        elseif(!isset($_SESSION['LoggedIn'])){
+            if($loggedOut = true)
+            {
+                //echo 'Succesfully logged out. Welcome Guest.';
+                echo 'Welcome Guest.';
+            }
+
         }
 
         ?>
