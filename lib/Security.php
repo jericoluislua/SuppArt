@@ -1,7 +1,7 @@
 <?php
 class Security
 {
-    const SESSION_USER = "loginuser";
+    const SESSION_USER = 'LoggedIn';
     const ADMIN = "denis.chanmong@gmail.com" | "jericoluislua@yahoo.com.ph";
     //static function to check if user is logged in
     public static function isAuthenticated() {
@@ -9,7 +9,7 @@ class Security
     }
     //static function to get current user
     public static function getUser() {
-        return (!empty($_SESSION[Security::SESSION_USER])) ? $_SESSION[Security::SESSION_USER] : null;
+        return (!empty($_SESSION['LoggedIn'])) ? $_SESSION[Security::SESSION_USER] : null;
     }
     //static function to get current user's id
     public static function getUserId() {

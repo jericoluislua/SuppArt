@@ -1,5 +1,6 @@
 <?php
 
+require_once '../repository/PostRepository.php';
 class UploadController
 {
     public function index()
@@ -11,47 +12,39 @@ class UploadController
         $view->display();
     }
     public function upload(){
-        $target_dir = "/SuppArt/uploads/";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-        if(isset($_POST["submit"])) {
-            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-            if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                echo "File is not an image.";
-                $uploadOk = 0;
+            if (isset($_POST['send'])) {
+                $destination = "/SuppArt/uploads/";
+                $picture_array = $_FILES['picture'];
+                $picturelink = $destination . '/';
+                //saves path extension in $ext
+                $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+                //protects from attackers
+                $title = htmlspecialchars($_POST['title']);
+                $date = date("Y-m-d");
+                $private = isset($_POST['private']);
+                //saves current user in
+                $creator = $_SESSION['LoggedIn'];
+                $postRepository = new PostRepository();
+                if ($ext == "jpg" || $ext == "gif" || $ext == "png" || $ext == "svg"|| $ext == "JPG"|| $ext == "GIF" || $ext == "SVG") {
+                    //call to upload
+                    $insertId = $postRepository->upload($picturelink, $title, $date, $creator, $private);
+                    //moves image to folder only if sqlquerry successful
+                    if ($insertId > 0) {
+                        $dst = $picturelink . $insertId . '.' . $ext;
+                        if (move_uploaded_file($picture_array['tmp_name'], $dst)) {
+                            //updates new imagepath in database
+                            if ($postRepository->update_picture($insertId, $dst)) {
+                                if ($private == 'true') {
+                                    Message::set("upload", "Upload successful! Go to <a href=\"/post/privatePost\">Private Post</a>");
+                                } else {
+                                    Message::set("upload", "Upload successful! Go to <a href=\"/post\">Post</a>");
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    Message::set("upload", "You can only upload pictures");
+                }
             }
         }
-// Check if file already exists
-        if (file_exists($target_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
-// Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
-// Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
-// Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo " Your file was not uploaded.";
-// if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-            } else {
-                echo "Sorry, there was an error uploading your file.";
-            }
-        }
-    }
 }

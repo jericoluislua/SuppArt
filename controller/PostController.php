@@ -21,7 +21,6 @@ class PostController
     }
     public function privatePost()
     {
-
         $postRepository = new PostRepository();
         $view = new View('post_index');
         $view->title = 'Your Submission';

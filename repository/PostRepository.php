@@ -16,9 +16,9 @@ class PostRepository extends Repository
     //saves picturepath in database
 
     public function upload($picture, $title, $date, $creator, $private){
-        $picture = $_POST['fileToUpload'];
+        $picture = $_POST['picture'];
         $title = $_POST['title'];
-        $creator = $_SESSION['user_id'];
+        $creator = $_SESSION['LoggedIn'];
         $query = "INSERT INTO $this->tableName (picture, title, date, creator, private) VALUES (?, ?, ?, ?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ssssi', $picture, $title, $date, $creator, $private);
