@@ -88,4 +88,3 @@
     </nav>
     <h1 class="subtitles"><?= $subtitle?></h1>
 
-}
