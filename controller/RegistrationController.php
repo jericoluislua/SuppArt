@@ -16,7 +16,7 @@ class RegistrationController
 
     public function doCreate()
     {
-        if ($_POST['send']) {
+        if (isset($_POST['send'])) {
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $email = $_POST['email'];
