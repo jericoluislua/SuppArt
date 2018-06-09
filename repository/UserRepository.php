@@ -83,4 +83,34 @@ class UserRepository extends Repository
 
         return false;
     }
+    
+    public function existingEmail($email)
+    {
+        $query = "SELECT $this->id FROM $this->tableName WHERE email = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s', $email);
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+        $result = $statement->get_result();
+        if($result->num_rows >= 1){
+            return true;
+        }
+        return false;
+    }
+
+    public function existingUsername($uname){
+        $query = "SELECT $this->id FROM $this->tableName WHERE username = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+
+        $statement->bind_param('s', $uname);
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+        $result = $statement->get_result();
+        if($result->num_rows >= 1){
+            return true;
+        }
+        return false;
+    }
 }
