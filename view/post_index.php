@@ -6,7 +6,7 @@
 
     if (empty($entry)): ?>
         <div class="dhd">
-            <h2 class="item title">Hoopla! no entries found. shit</h2>
+            <h2 class="item title">Hoopla! no entries found.</h2>
         </div>
     <?php else: ?>
         <?php foreach ($entry as $entries): ?>
